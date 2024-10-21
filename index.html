@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraUnlock</title>
+    <style>
+        * {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function process(token, id) {
+            alert("AVISO: NUNCA COMPARTILHE ESTE CÓDIGO COM OUTRA PESSOA, COMPARTILHE A PÁGINA! ELE CONTÉM O TOKEN DA SUA CONTA, O QUE PODE SER USADO MALICIOSAMENTE! (nota: não é um risco caso use apenas em sua conta do Chromebook)");
+            let code = `javascript:!function(){function e(e,t={},a={}){e=document.createElement(e);return Object.assign(e,t),Object.assign(e.style,a),e}const o=e("input",{type:"file",id:"fileInput",accept:".sb3",tabIndex:-1},{display:"none"}),r=e("button",{id:"fileInpUI",innerText:"Clique aqui para fazer o upload de um arquivo .sb3 (projeto Scratch)",type:"button"},{zIndex:999,position:"absolute",width:"500px",top:"50%",left:"50%",transform:"translate(-50%, -50%)",backgroundColor:"gray",color:"lightblue"});document.body.append(o,r);var t=e("script",{src:"//cdn.jsdelivr.net/npm/@zip.js/zip.js@2.7.52/dist/zip-full.min.js"});document.head.appendChild(t),o.addEventListener("change",async e=>{var t,a,n,i,e=e.target.files[0];e&&(o.remove(),r.remove(),{project:t,formattedData:a}=function(e){let t=null;var a=[];for(var[o,r]of Object.entries(e))"project.json"===o?t=r:a.push([o,r]);return{project:t,formattedData:a}}(await async function(e){var t={};for(const o of e){var a;/\\.(png|wav)$/i.test(o.filename)?(a=await o.getData(new zip.BlobWriter),t[o.filename]=a):(a=await o.getData(new zip.TextWriter),t[o.filename]=a)}return t}(await(e=new zip.ZipReader(new zip.BlobReader(e))).getEntries())),alert("Para salvar o projeto, FAÇA uma alteração a alguma fantasia (escolhendo uma aleatória, desenhando em cima de uma existente, pintando uma nova...), SALVE o projeto, e aguarde o Scratch recarregar. MODO DE ESPERA ATIVADO."),alert("AVISO: Se algo não aparecer corretamente, significa que o arquivo é muito pesado para os servidores do Alura, e NÃO é algo que eu consiga mudar. Desculpe. (projetos já no Alura não vão ter esse problema)"),n=a,i=t,window.XMLHttpRequest=function(){var e=new c;const a={};let o="",r="";return e.open=function(e,t,...a){r=e,o=t,c.prototype.open.apply(this,[e,t,...a])},e.setRequestHeader=function(e,t){a[e]=t,c.prototype.setRequestHeader.call(this,e,t)},e.send=async function(e=null){var t;o.includes("asset")?(t=o.replace(/\\/[^\\/]*\\.[^\\/]*$/,"/"),await function(r,n,e,i){e=e.concat(e).map(([t,o])=>new Promise(e=>{const a=new c;a.open(r,n+t,!0),Object.entries(i).forEach(([e,t])=>a.setRequestHeader(e,t)),a.onload=()=>e(),a.onerror=()=>e(),a.send(o)}));return Promise.all(e)}(r,t,n,a),await fetch("https://cursos.alura.com.br/scratch/api/projects/"+location.search.replace(/\\?[^\\=]*[^$]/,""),{headers:{accept:"*/*","accept-language":"pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6,zu;q=0.5,ar;q=0.4,yo;q=0.3,hi;q=0.2,or;q=0.1",authorization:"<authorizationtoken>","cache-control":"no-cache","content-type":"application/json","logged-user-id":"<userid>",pragma:"no-cache",priority:"u=1, i","sec-ch-ua":'"Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"',"sec-ch-ua-mobile":"?0","sec-ch-ua-platform":'"Windows"',"sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-origin"},referrer:location.href,referrerPolicy:"strict-origin-when-cross-origin",body:i,method:"PUT",mode:"cors",credentials:"include"}),window.onbeforeunload=null,location.reload()):c.prototype.send.call(this,e)},e},await e.close())});const c=XMLHttpRequest;r.addEventListener("click",()=>o.click())}(); // Minified using https://skalman.github.io/UglifyJS-online/`;
+            code = code.replace("<authorizationtoken>",token).replace("<userid>",id);
+            let final = document.getElementById("final");
+            final.firstChild.lastElementChild.href = code;
+            document.getElementById("maindiv").remove();
+            final.style.display = "";
+        }
+    </script>
+    <br>
+    <h1>Bem vindo.</h1>
+    <br>
+    <h2>Faça a configuração inicial para poder usar este programa.</h2>
+    <br>
+    <div id="maindiv">
+    <h3>Passos abaixo:</h3>
+    <br>
+    <h4><ol>
+        <li>Verifique se há uma barra entre a página e a barra de pesquisa (barra de favoritos).
+            <h5>Caso não há, aperte CTRL+SHIFT+B.</h5>
+        </li>
+        <li>Vá no seu Scratch.
+            <h5>Alura -> Continuar Unidade -> Meu projeto -> Continuar meu projeto.</h5>
+        </li>
+        <li>Abra as Ferramentas de Desenvolvedor.
+            <h5>Use CTRL+SHIFT+I.</h5>
+        </li>
+        <li>Vá para a guia Network/Rede.
+            <h5>Caso não apareça, use o botão >> e selecione-a.</h5>
+        </li>
+        <li>Verifique-se que a atividade está sendo gravada.
+            <h5>O primeiro botão da segunda barra não pode ser ◉.</h5>
+        </li>
+        <li>Salve seu projeto. (obrigatório)
+            <h5>Arquivo/File -> Salvar agora/Save now.</h5>
+        </li>
+        <li>Clique com o botão direito (2 toques simultâneos no touchpad ou alt+apenas um) no novo item da lista que aparecer, com o ícone { ; }.
+            <h5>Coloque o mouse em cima de Copiar/Copy, e clique em Copiar como cURL (bash)/Copy as cURL (bash).</h5>
+        </li>
+        <li>Cole sua área de transferência (CTRL+V) neste menu abaixo:
+            <div style="display: flex; flex-direction: column; width: 500px;">
+                <textarea placeholder='curl "https://cursos.alura.com.br/scratch/api/projects/...' style="width: 100%; height: 250px; margin-bottom: 10px;"></textarea>
+                <button style="width: 101%; height: 100px;" onclick="try { let value = this.previousElementSibling.value; process(value.match(/'authorization: (.*)'/)[1], value.match(/'logged-user-id: (.*)'/)[1]); } catch { alert('Verifique-se que o conteúdo está correto e tente novamente.'); }"><h5 style="font-size: x-large;">Concluído</h5></button>
+            </div>
+        </li>
+    </ol></h4>
+    </div>
+    <h4 id="final" style="display: none"><ul>Pronto! Arraste isso para sua barra de favoritos: <a href="#">AluraUnlock</a></ul></h4>
+    <h4>Nota: Para usar, clique no ícone que foi criado de nome AluraUnlock na página do Scratch do Alura.</h4>
+</body>
+</html>
