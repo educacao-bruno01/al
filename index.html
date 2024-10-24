@@ -50,16 +50,19 @@
             <h5>Arquivo/File -> Salvar agora/Save now.</h5>
         </li>
         <li>Clique com o botão direito (2 toques simultâneos no touchpad ou alt+apenas um) no novo item da lista que aparecer, com o ícone { ; }.
-            <h5>Coloque o mouse em cima de Copiar/Copy, e clique em Copiar como cURL (bash)/Copy as cURL (bash).</h5>
+            <h5>Coloque o mouse em cima de Copiar/Copy, e clique em Copiar como fetch/Copy as fetch.</h5>
         </li>
         <li>Cole sua área de transferência (CTRL+V) neste menu abaixo:
             <div style="display: flex; flex-direction: column; width: 500px;">
-                <textarea placeholder='curl "https://cursos.alura.com.br/scratch/api/projects/...' style="width: 100%; height: 250px; margin-bottom: 10px;"></textarea>
-                <button style="width: 101%; height: 100px;" onclick="try { let value = this.previousElementSibling.value; process(value.match(/'authorization: (.*)'/)[1], value.match(/'logged-user-id: (.*)'/)[1]); } catch { alert('Verifique-se que o conteúdo está correto e tente novamente.'); }"><h5 style="font-size: x-large;">Concluído</h5></button>
+                <textarea placeholder='fetch("https://cursos.alura.com.br/scratch/api/projects/...' style="width: 100%; height: 250px; margin-bottom: 10px;"></textarea>
+                <button style="width: 101%; height: 100px;" onclick='try { let value = this.previousElementSibling.value; process(value.match(/\"authorization\": \"(.*)\"/)[1], value.match(/\"logged-user-id\": \"(.*)\"/)[1]); } catch { alert("Verifique-se que o conteúdo está correto e tente novamente."); }'><h5 style="font-size: x-large;">Concluído</h5></button>
+                <br>
+                <button style="width: 101%; height: 25px;" onclick="process(prompt('Insira token (authorization): '), prompt('Insira ID (logged-user-id): '));"><h5 style="font-size: medium;">Ou, alternativamente, insira os tokens você mesmo.</h5></button>
             </div>
         </li>
     </ol></h4>
     </div>
+    <br>
     <h4 id="final" style="display: none"><ul>Pronto! Arraste isso para sua barra de favoritos: <a href="#">AluraUnlock</a></ul></h4>
     <h4>Nota: Para usar, clique no ícone que foi criado de nome AluraUnlock na página do Scratch do Alura.</h4>
 </body>
